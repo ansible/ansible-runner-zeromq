@@ -14,7 +14,7 @@ def get_configuration(runner_config):
 def send_request(url, data):
     context = zmq.Context()
     sink = context.socket(zmq.PUSH)
-    sink.connect(url)
+    sink.bind(url)
     sink.send_json(data)
 
 
